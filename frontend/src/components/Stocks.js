@@ -16,7 +16,7 @@
 //   }, []);
 
 //   const fetchStocks = () => {
-//     axios.get('http://localhost:5000/api/stocks')
+//     axios.get('http://stock-manager-bg9d.onrender.com/api/stocks')
 //       .then((res) => setStocks(res.data))
 //       .catch((err) => console.error("Fetch error:", err));
 //   };
@@ -31,11 +31,11 @@
 //   try {
 //     if (editId) {
 //       // ✏️ Update existing stock
-//       await axios.put(`http://localhost:5000/api/stocks/${editId}`, form);
+//       await axios.put(`http://stock-manager-bg9d.onrender.com/api/stocks/${editId}`, form);
 //       setEditId(null); // exit edit mode
 //     } else {
 //       // ➕ Add new stock
-//       await axios.post('http://localhost:5000/api/stocks', form);
+//       await axios.post('http://stock-manager-bg9d.onrender.com/api/stocks', form);
 //     }
 
 //     setForm({ name: '', quantity: '', price: '', category: '' }); // reset form
@@ -47,7 +47,7 @@
 
 //   const handleDelete = async (id) => {
 //     try {
-//       await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+//       await axios.delete(`http://stock-manager-bg9d.onrender.com/api/stocks/${id}`);
 //       fetchStocks();
 //     } catch (err) {
 //       console.error("Error deleting stock:", err);
@@ -147,7 +147,7 @@ function Stocks() {
   }, []);
 
   const fetchStocks = () => {
-    axios.get('http://localhost:5000/api/stocks')
+    axios.get('http://stock-manager-bg9d.onrender.com/api/stocks')
       .then((res) => setStocks(res.data))
       .catch((err) => console.error("Fetch error:", err));
   };
@@ -160,10 +160,10 @@ function Stocks() {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/api/stocks/${editId}`, form);
+        await axios.put(`http://stock-manager-bg9d.onrender.com/api/stocks/${editId}`, form);
         setEditId(null);
       } else {
-        await axios.post('http://localhost:5000/api/stocks', form);
+        await axios.post('http://stock-manager-bg9d.onrender.com/api/stocks', form);
       }
       toast.success("Stock added successfully!");
       setForm({ name: '', quantity: '', price: '', category: '' });
@@ -175,7 +175,7 @@ function Stocks() {
   
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+      await axios.delete(`http://stock-manager-bg9d.onrender.com/api/stocks/${id}`);
       toast.success("Stock deleted successfully!");
       fetchStocks();
     } catch (err) {
